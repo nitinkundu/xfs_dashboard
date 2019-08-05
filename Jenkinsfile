@@ -33,12 +33,12 @@ pipeline
                 
             }
         }
-        stage ('zipping'){
-            steps {
+        // stage ('zipping'){
+        //     steps {
                  
-                sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
-            }
-        }
+        //         sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
+        //     }
+        // }
         // stage ('Nexus'){
         //     steps{
         //         sh 'ls'
