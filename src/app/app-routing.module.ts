@@ -4,9 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
  
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+//   { path: 'login', component: LoginComponent },
   // { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent }
 
 ];
 
