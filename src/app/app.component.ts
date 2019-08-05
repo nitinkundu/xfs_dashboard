@@ -7,7 +7,7 @@ import { Dashboard } from './dashboard';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'XFS';
+  title = 'Extreme Feedback System';
 
   dash: Dashboard;
  
