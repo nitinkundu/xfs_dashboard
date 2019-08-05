@@ -1,10 +1,10 @@
 
 export class Dashboard {
 
-    jobtitle: string;
-    number: number;
+ 
+    bNumber: number;
     name: string;
-    status: string;
-    link: string;
+    buildStatus: string;
+    bUrl: string;
 
 }
