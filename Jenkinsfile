@@ -39,20 +39,20 @@ pipeline
                 sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
             }
         }
-        stage ('Nexus'){
-            steps{
-                sh 'ls'
-                withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pass', usernameVariable: 'usr')]) {
-                 sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Frontend_Angular/abcApp.zip'
-                }
+        // stage ('Nexus'){
+        //     steps{
+        //         sh 'ls'
+        //         withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pass', usernameVariable: 'usr')]) {
+        //          sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Frontend_Angular/abcApp.zip'
+        //         }
                 
-            }
-        }
+        //     }
+        // }
         stage ('Deploy') {
             steps {
-              withCredentials([file(credentialsId: 'angular-react-deployment-server', variable: 'deployment_server')]) {
-                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@18.188.202.13:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@18.188.202.13 "cd /home/ubuntu; unzip -o abcApp.zip -d angular__App;pm2 restart "angular__App""'
+              withCredentials([file(credentialsId: 'tomcat_ashish', variable: 'deployment_server')]) {
+                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@13.233.251.211:/home/ubuntu'
+                   sh 'ssh -v -i ${deployment_server} ubuntu@13.233.251.211 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 "start -p 8000" --name "XFS_Frontend""'
                   
                }
             }
