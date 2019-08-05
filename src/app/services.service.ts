@@ -10,7 +10,7 @@ export class ServicesService {
   private usersUrl: string;
  
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://18.188.202.13:8080/ManisaSpringSample/users';
+    this.usersUrl = 'http://ec2-13-233-251-211.ap-south-1.compute.amazonaws.com:8080/Backend_XFS/api/xfs';
   }
  
   public findAll(): Observable<Dashboard> {
