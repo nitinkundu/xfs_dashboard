@@ -2,8 +2,9 @@
 export class Dashboard {
 
  
+    l_commit: string;
     bNumber: number;
-    name: string;
+    jobtitle: string;
     buildStatus: string;
     bUrl: string;
 
