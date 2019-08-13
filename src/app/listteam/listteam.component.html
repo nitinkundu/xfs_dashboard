@@ -36,7 +36,7 @@
 <br>
 <mat-card (click)="navigate()" class="card1"  >
     <mat-card-content>
-         <mat-card-title> TEAM B</mat-card-title>
+         <mat-card-title *ngFor="let test of "> {{team.teamName}}</mat-card-title>
          <mat-card-subtitle> Hello Team B </mat-card-subtitle>
     </mat-card-content>
 </mat-card>
