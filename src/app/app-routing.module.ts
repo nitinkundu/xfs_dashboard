@@ -6,9 +6,9 @@ import { ListteamComponent } from './listteam/listteam.component';
  
 const routes: Routes = [
 //   { path: 'login', component: LoginComponent },
-  // { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent },
  
-  { path: '', component: ListteamComponent},
+  { path: 'main', component: ListteamComponent},
   { path: 'home', component: HomeComponent },
 
 ];
