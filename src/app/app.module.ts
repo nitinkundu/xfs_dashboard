@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ListteamComponent } from './listteam/listteam.component';
+import { AddteamComponent } from './addteam/addteam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ListteamComponent
+    ListteamComponent,
+    AddteamComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,10 @@ export class ListteamComponent implements OnInit {
     //do your any operations
     this.router.navigate(['home']);
     }
+    submit(){
+      //do your any operations
+      this.router.navigate(['add']);
+      }
 
   ngOnInit() {
   }
