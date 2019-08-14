@@ -1,9 +1,9 @@
 export class Team {
 
-        public teamName: string;
-        public gitUsername: string;
-        public gitReponame: string;
-        public memberName: string;
-        public memberNumber: string;
+         teamName: string;
+         gitUsername: string;
+         gitReponame: string;
         
-}
+         memberName: string;
+         memberNumber: string;
+         }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Team } from '../team';
 import { ServicesService } from '../services.service';
 
@@ -12,13 +12,16 @@ import { ServicesService } from '../services.service';
 export class ListteamComponent implements OnInit {
 
   team : Team;
-  constructor(private router:Router, private Service: ServicesService) { }
+  public teamName;
+  constructor(private router:Router, private route:ActivatedRoute, private Service: ServicesService) { }
 
-  navigate(){
-    this.router.navigate(['home']);
-    
+  // navigate(){
+  //   this.router.navigate(['home']);
+  //   // this.Service.findAll().subscribe(data => {
+  //   //   console.log(data);
+  //   //   this.team=data;
 
-    }
+  //   }
     submit(){
       
       this.router.navigate(['add']);
@@ -29,6 +32,13 @@ export class ListteamComponent implements OnInit {
       console.log(data);
       this.team=data;
     });
+
+    let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
+    this.teamName = tName;
+  }
+
+  onSelect(team){
+    this.router.navigate(['list', team.teamName]);
   }
 
 }

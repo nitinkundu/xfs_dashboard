@@ -6,9 +6,9 @@
   
 </div>
  <div class= "space"></div>
- <div class= "element">
-<h2 style="font-size:120%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial,"> <b>Add & List Teams </b> </h2>
- </div>
+ <!-- <div class= "element"> -->
+<h2 style="font-size:180%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial,"> <b>Add & List Teams </b> </h2>
+ <!-- </div> -->
 
 
 
@@ -17,7 +17,7 @@
       <div class="col-md-12" >
           <div class="card-body">
             <ul class="text-center">
-              <li class="list-inline-item" style= "float: right"><a routerLink="/addteam" class="btn btn-info" (click)="submit()">Add Team</a></li>
+              <li class="list-inline-item" style= "float: right"><a class="btn btn-info" (click)="submit()">Add Team</a></li>
             </ul>
           </div>
         <!-- <router-outlet></router-outlet> -->
@@ -27,17 +27,17 @@
 
 
 
-<mat-card (click)="navigate()" class="card1"  >
+<mat-card class="card1"  >
     <mat-card-content>
          <mat-card-title> TEAM A</mat-card-title>
          <mat-card-subtitle> Hello Team A </mat-card-subtitle>
     </mat-card-content>
 </mat-card>
 <br>
-<mat-card (click)="navigate()" class="card1"  >
+<mat-card class="card1"  >
     <mat-card-content>
-         <mat-card-title *ngFor="let team of Team"> {{team.teamName}}</mat-card-title>
-         <mat-card-subtitle> Hello Team  </mat-card-subtitle>
+         <mat-card-title><li (click)="onSelect(team)"*ngFor="let team of Team"> {{team.teamName}}</li></mat-card-title>
+         <mat-card-subtitle> Hello Team {{team.teamName}}  </mat-card-subtitle>
     </mat-card-content>
 </mat-card>
 

@@ -13,7 +13,7 @@ password: string;
   }
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
-     this.router.navigate(["main"]);
+     this.router.navigate(["list"]);
     }else {
       alert("Invalid credentials");
     }

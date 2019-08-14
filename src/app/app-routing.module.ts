@@ -8,8 +8,9 @@ import { AddteamComponent } from './addteam/addteam.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
  
-  { path: 'main', component: ListteamComponent},
-  { path: 'home', component: HomeComponent },
+  { path: 'list', component: ListteamComponent},
+  //{ path: 'home', component: HomeComponent },
+  {path: 'list/:teamName', component: HomeComponent },
   { path: 'add', component: AddteamComponent}
 
 ];
