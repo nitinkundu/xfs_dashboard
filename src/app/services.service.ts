@@ -14,9 +14,9 @@ export class ServicesService {
     this.Url = 'http://ec2-52-66-245-186.ap-south-1.compute.amazonaws.com:8080/XFSAPP/api/';
   }
  
-  public findAll(): Observable<Dashboard> {
-    return this.http.get<Dashboard>(this.Url );
-  }
+//   public findAll(): Observable<Dashboard> {
+//     return this.http.get<Dashboard>(this.Url );
+//   }
   
   public save(team: Team) {
     return this.http.post<Team>(this.Url +"addteam", team);
