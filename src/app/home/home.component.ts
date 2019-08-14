@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
 import { Dashboard } from '../dashboard';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,15 @@ export class HomeComponent implements OnInit {
 
   dash: Dashboard;
  
-  constructor(private dashboardService: ServicesService) { }
+  constructor(private dashboardService: ServicesService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.dash.l_commit = params["l_commit"];
+      this.dash.bNumber = params["bNumber"];
+      this.dash.bUrl = params["bUrl"];
+      this.dash.buildStatus = params["buildStatus"];
+      this.dash.jobtitle = params["jobtitle"];
+    });
+   }
 
   ngOnInit() {
     this.dashboardService.findAll().subscribe(data => {
