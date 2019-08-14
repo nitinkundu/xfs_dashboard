@@ -51,8 +51,8 @@ pipeline
         stage ('Deploy') {
             steps {
                 withCredentials([file(credentialsId: 'ashish_deployment_server', variable: 'deployment_server')]) {
-                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@52.66.245.186:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 start "serve -p 4200 ." --name "XFS_Frontend""'
+                   sh 'scp -v -i ${deployment_server} -o StrictHostKeyChecking=no abcApp.zip ubuntu@52.66.245.186:/home/ubuntu'
+                   sh 'ssh -v -i ${deployment_server} -o StrictHostKeyChecking=no ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 start "serve -p 4200 ." --name "XFS_Frontend""'
                   
                }
             }
