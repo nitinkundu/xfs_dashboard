@@ -11,7 +11,6 @@ export class ListteamComponent implements OnInit {
   constructor(private router:Router) { }
 
   navigate(){
-    //do your any operations
     this.router.navigate(['home']);
     }
 
