@@ -15,14 +15,14 @@ export class ServicesService {
   }
  
   public findAll(): Observable<Dashboard> {
-    return this.http.get<Dashboard>(this.Url );
+    return this.http.get<Dashboard>(this.Url +"teamlist" );
   }
   
   public save(team: Team) {
     return this.http.post<Team>(this.Url +"addteam", team);
   }
 
-  public fetchAll(): Observable<Team> {
-    return this.http.get<Team>(this.Url +"teamlist");
+  public fetchAll() { 
+    return this.http.get(this.Url +"teamlist");
   }
 }
