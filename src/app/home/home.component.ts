@@ -8,7 +8,6 @@ import { Dashboard } from '../dashboard';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'XFS';
 
   dash: Dashboard;
  

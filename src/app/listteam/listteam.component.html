@@ -17,7 +17,7 @@
       <div class="col-md-12" >
           <div class="card-body">
             <ul class="text-center">
-              <li class="list-inline-item" style= "float: right"><a routerLink="/addteam" class="btn btn-info">Add Team</a></li>
+              <li class="list-inline-item" style= "float: right"><a routerLink="/addteam" class="btn btn-info" (click)="submit()">Add Team</a></li>
             </ul>
           </div>
         <!-- <router-outlet></router-outlet> -->
@@ -36,8 +36,8 @@
 <br>
 <mat-card (click)="navigate()" class="card1"  >
     <mat-card-content>
-         <mat-card-title> TEAM B</mat-card-title>
-         <mat-card-subtitle> Hello Team B </mat-card-subtitle>
+         <mat-card-title *ngFor="let team of Team"> {{team.teamName}}</mat-card-title>
+         <mat-card-subtitle> Hello Team  </mat-card-subtitle>
     </mat-card-content>
 </mat-card>
 
