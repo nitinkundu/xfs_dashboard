@@ -12,6 +12,7 @@ import { ServicesService } from '../services.service';
 export class ListteamComponent implements OnInit {
 
   team : Team;
+  teams:any;
   public teamName;
   constructor(private router:Router, private route:ActivatedRoute, private Service: ServicesService) { }
 
@@ -30,7 +31,7 @@ export class ListteamComponent implements OnInit {
   ngOnInit() {
     this.Service.fetchAll().subscribe(data => {
       console.log(data);
-      this.team=data;
+      this.teams = data;
     });
 
     let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
