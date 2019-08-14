@@ -48,15 +48,15 @@ pipeline
                 
         //     }
         // }
-        stage ('Deploy') {
+        /*stage ('Deploy') {
             steps {
               withCredentials([file(credentialsId: 'tomcat_ashish', variable: 'deployment_server')]) {
-                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@13.233.251.211:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@13.233.251.211 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 "start -p 8000" --name "XFS_Frontend""'
+                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@52.66.245.186:/home/ubuntu'
+                   sh 'ssh -v -i ${deployment_server} ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 "start -p 8000" --name "XFS_Frontend""'
                   
                }
             }
-        }
+        }*/
         
     }
     post { 
