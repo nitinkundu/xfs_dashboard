@@ -33,12 +33,12 @@ pipeline
                 
             }
         }
-        // stage ('zipping'){
-        //     steps {
+         stage ('zipping'){
+             steps {
                  
-        //         sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
-        //     }
-        // }
+                 sh 'cd dist/XFS; zip -r ../../abcApp.zip . ;'
+             }
+         }
         // stage ('Nexus'){
         //     steps{
         //         sh 'ls'
@@ -48,15 +48,15 @@ pipeline
                 
         //     }
         // }
-        /*stage ('Deploy') {
+        stage ('Deploy') {
             steps {
-              withCredentials([file(credentialsId: 'tomcat_ashish', variable: 'deployment_server')]) {
+                withCredentials([file(credentialsId: 'ashish_deployment_server', variable: 'deployment_server')]) {
                    sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@52.66.245.186:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 "start -p 8000" --name "XFS_Frontend""'
+                   sh 'ssh -v -i ${deployment_server} ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d XFS_Frontend;pm2 start "serve -p 4200 ." --name "XFS_Frontend""'
                   
                }
             }
-        }*/
+        }
         
     }
     post { 
