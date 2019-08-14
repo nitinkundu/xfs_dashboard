@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { Team } from '../team';
 import { ServicesService } from '../services.service';
+import { Dashboard } from '../dashboard';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -12,7 +14,9 @@ import { ServicesService } from '../services.service';
 export class ListteamComponent implements OnInit {
 
   team : Team;
+  dash : Dashboard;
   teams:any;
+  obj:any;
   public teamName;
   constructor(private router:Router, private route:ActivatedRoute, private Service: ServicesService) { }
 
@@ -39,7 +43,16 @@ export class ListteamComponent implements OnInit {
   }
 
   onSelect(team){
-    this.router.navigate(['list', team.teamName]);
+    let obj: Dashboard = {
+       
+        l_commit: this.dash.l_commit,
+        bNumber: this.dash.bNumber,
+        jobtitle: this.dash.jobtitle,
+        buildStatus: this.dash.buildStatus,
+        bUrl: this.dash.bUrl,
+      };
+      this.router.navigate(['list', team.teamName], this.obj);
   }
-
 }
+  
+
