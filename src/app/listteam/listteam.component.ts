@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute,Router, NavigationExtras } from '@angular/router';
 import { Team } from '../team';
 import { ServicesService } from '../services.service';
 import { Dashboard } from '../dashboard';
@@ -42,16 +42,17 @@ export class ListteamComponent implements OnInit {
     this.teamName = tName;
   }
 
-  onSelect(team){
-    let obj: Dashboard = {
-       
+  public onSelect(team){
+    let navigationExtras: NavigationExtras= {
+        queryParams:{
         l_commit: this.dash.l_commit,
         bNumber: this.dash.bNumber,
         jobtitle: this.dash.jobtitle,
         buildStatus: this.dash.buildStatus,
         bUrl: this.dash.bUrl,
+        }
       };
-      this.router.navigate(['list', team.teamName], this.obj);
+      this.router.navigate(['list', team.teamName], navigationExtras);
   }
 }
   
