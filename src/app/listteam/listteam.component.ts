@@ -36,23 +36,29 @@ export class ListteamComponent implements OnInit {
       this.teams = data;
     });
 
-    let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
-    this.teamName = tName;
+    
   }
 
+
+
   public onSelect(team){
-    let navigationExtras: NavigationExtras= {
-        queryParams:{
-        l_commit: this.dash.l_commit,
-        bNumber: this.dash.bNumber,
-        jobtitle: this.dash.jobtitle,
-        buildStatus: this.dash.buildStatus,
-        bUrl: this.dash.bUrl,
-        }
-      };
-      this.router.navigate(['list', team.teamName], navigationExtras);
-      
+    this.router.navigate(['list', team.teamName ])
   }
+
+  // public onSelect(team){
+  //   let navigationExtras: NavigationExtras= {
+  //       queryParams:{
+  //       l_commit: this.dash.l_commit,
+  //       bNumber: this.dash.bNumber,
+  //       jobtitle: this.dash.jobtitle,
+  //       buildStatus: this.dash.buildStatus,
+  //       bUrl: this.dash.bUrl,
+  //       }
+  //     };
+      
+  //     this.router.navigate(['list', team.teamName], navigationExtras);
+      
+  // }
 
   goToHomeComponent(): void {
     this.Service.data = {this:this.team.teamName};

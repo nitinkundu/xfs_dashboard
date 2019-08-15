@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   dash: Dashboard;
   data: any;
- 
+  public teamName; 
   constructor(private Service: ServicesService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.dash.l_commit = params["l_commit"];
@@ -23,13 +23,20 @@ export class HomeComponent implements OnInit {
     });
    }
 
-  ngOnInit(): void {
-    this.Service.findAll().subscribe(data => {
-      console.log(data)
-      this.dash = data;
-    });
-    this.data = this.Service.data;
-        this.Service.data = undefined;
+   ngOnInit(): void {
 
-  }
+    let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
+    this.teamName = tName;
+
+   }
+
+  // ngOnInit(): void {
+  //   this.Service.findAll().subscribe(data => {
+  //     console.log(data)
+  //     this.dash = data;
+  //   });
+  //   this.data = this.Service.data;
+  //       this.Service.data = undefined;
+
+  // }
 }
