@@ -11,19 +11,19 @@
       <form #teamsForm="ngForm">
         <div class="form-group">
           <label for="teamName">Team Name</label>
-         <input type="text" [(ngModel)]="teams.teamName" 
+         <input type="text" [(ngModel)]="teamName" 
             class="form-control" id="teamName" name="teamName" placeholder="Enter team name"
             required #name="ngModel">
         </div>
         <!-- <div [hidden]="!teamName.pristine" class="alert alert-danger">Team Name is required</div> -->
         <div class="form-group">
           <label for="gitUsername">GitUsername</label>
-          <input type="text" [(ngModel)]="teams.gitUsername" 
+          <input type="text" [(ngModel)]="gitUsername" 
             class="form-control" id="gitUsername" name="gitUsername" placeholder="Enter gitUsername"
             required #gitUsername="ngModel"></div>
             <div class="form-group">
             <label for="gitReponame">GitReponame</label>
-            <input type="text" [(ngModel)]="teams.gitReponame" 
+            <input type="text" [(ngModel)]="gitReponame" 
               class="form-control" id="gitUrl" name="gitReponame" placeholder="Enter gitReponame"
               required #gitReponame="ngModel">
           <!-- <div [hidden]="!gitUrl.pristine" class="alert alert-danger">Git URL is required</div> -->
@@ -37,13 +37,13 @@
                     <tr>
                       <td>
                         <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Member Name" [(ngModel)]="memberName" name="memberName" required>
+                        <input matInput placeholder="Member Name" name="memberName" [(ngModel)]="memberName" required>
                         </mat-form-field>
                       </td>
                     </tr>
                     <tr>
                     <td><mat-form-field class="example-full-width">
-                      <input matInput placeholder="Member Number" [(ngModel)]="memberNumber" name="memberNumber" required>
+                      <input matInput placeholder="Member Number" name="memberNumber" [(ngModel)]="memberNumber" required>
                     </mat-form-field></td>
                   </tr></table>
                 </form>

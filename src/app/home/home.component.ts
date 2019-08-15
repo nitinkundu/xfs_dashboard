@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   dash: Dashboard;
   data: any;
-  public teamName; 
+  public teamdetails; 
   constructor(private Service: ServicesService, private route: ActivatedRoute) {
     // this.route.queryParams.subscribe(params => {
     //   this.dash.l_commit = params["l_commit"];
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
    ngOnInit(): void {
 
     let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
-    this.teamName = tName;
+    this.teamdetails = tName;
 
    }
 
