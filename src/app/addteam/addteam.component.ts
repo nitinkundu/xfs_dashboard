@@ -25,10 +25,12 @@ export class AddteamComponent implements OnInit {
         teamName: this.team.teamName,
         gitUsername: this.team.gitUsername,
         gitReponame: this.team.gitReponame,
-        members: [{
-          memberName: this.team.memberName,
-          memberNumber: this.team.memberNumber,
-        }]
+        // members: [{
+        //   memberName: this.team.memberName,
+        //   memberNumber: this.team.memberNumber,
+        // }]
+        memberName: this.team.memberName,
+        memberNumber: this.team.memberNumber,
       }
       this.Service.save(this.newTeam).subscribe(result => this.gotoListteam());
       // this.router.navigate(['main']);
