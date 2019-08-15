@@ -8,7 +8,7 @@
     <div><h2 style="font-size:120%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial,"> <b>ADD TEAMS</b> </h2>
 <div class="card my-5">
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #teamsForm="ngForm">
+      <form #teamsForm="ngForm">
         <div class="form-group">
           <label for="teamName">Team Name</label>
          <input type="text" [(ngModel)]="teams.teamName" 

@@ -11,8 +11,9 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   dash: Dashboard;
+  data: any;
  
-  constructor(private dashboardService: ServicesService, private route: ActivatedRoute) {
+  constructor(private Service: ServicesService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.dash.l_commit = params["l_commit"];
       this.dash.bNumber = params["bNumber"];
@@ -22,10 +23,13 @@ export class HomeComponent implements OnInit {
     });
    }
 
-  ngOnInit() {
-    this.dashboardService.findAll().subscribe(data => {
+  ngOnInit(): void {
+    this.Service.findAll().subscribe(data => {
       console.log(data)
       this.dash = data;
     });
+    this.data = this.Service.data;
+        this.Service.data = undefined;
+
   }
 }

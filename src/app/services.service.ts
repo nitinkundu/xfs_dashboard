@@ -7,6 +7,7 @@ import { Team } from './team';
  
 @Injectable()
 export class ServicesService {
+  [x: string]: any;
  
   private Url: string;
  

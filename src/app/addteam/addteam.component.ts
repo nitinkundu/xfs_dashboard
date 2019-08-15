@@ -35,7 +35,7 @@ export class AddteamComponent implements OnInit {
     }
    
     gotoListteam() {
-      this.router.navigate(['main']);
+      this.router.navigate(['list']);
     }
     
     // addUser()  {

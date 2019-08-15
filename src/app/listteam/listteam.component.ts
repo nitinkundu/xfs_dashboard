@@ -3,8 +3,6 @@ import { ActivatedRoute,Router, NavigationExtras } from '@angular/router';
 import { Team } from '../team';
 import { ServicesService } from '../services.service';
 import { Dashboard } from '../dashboard';
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
-
 
 @Component({
   selector: 'app-listteam',
@@ -53,7 +51,13 @@ export class ListteamComponent implements OnInit {
         }
       };
       this.router.navigate(['list', team.teamName], navigationExtras);
+      
   }
+
+  goToHomeComponent(): void {
+    this.Service.data = {this:this.team.teamName};
+    this.router.navigate(['list',this.team.teamName]);
+}
 }
   
 
