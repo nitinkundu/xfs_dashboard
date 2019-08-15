@@ -32,8 +32,8 @@ export class ListteamComponent implements OnInit {
    
   }
 
-   public goToHomeComponent(teams) : void {
-     this.router.navigate(['list', teams.teamName], {state: {data: this.teams}});
+   public goToHomeComponent(team) : void {
+     this.router.navigate(['list', team.teamName], {state: {data: this.teams}});
    }
 
 

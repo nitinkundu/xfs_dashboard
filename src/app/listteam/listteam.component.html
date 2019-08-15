@@ -28,7 +28,7 @@
 
 
 <!-- <mat-card class="card1" (click)="onSelect(team)" *ngFor="let team of teams" > -->
-  <mat-card class="card1" (click)="goToHomeComponent(teams)" *ngFor="let team of teams" >
+  <mat-card class="card1" (click)="goToHomeComponent(team)" *ngFor="let team of teams" >
     <mat-card-content>
          <mat-card-title>{{teams.teamName}}</mat-card-title>
          <mat-card-subtitle> Hello Team {{teams.teamName}}  </mat-card-subtitle>
