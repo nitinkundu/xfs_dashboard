@@ -15,6 +15,11 @@ export class AddteamComponent implements OnInit {
   // memberNumber: string;
   team: any;
   newTeam:any;
+  memberNumber: any;
+  memberName: any;
+  gitReponame: any;
+  gitUsername: any;
+  teamName: any;
   constructor(private route: ActivatedRoute, private router: Router, private Service: ServicesService) {
     this.team = new Team();
   
@@ -22,15 +27,15 @@ export class AddteamComponent implements OnInit {
  
     onSubmit() {
       this.newTeam = {
-        teamName: this.team.teamName,
-        gitUsername: this.team.gitUsername,
-        gitReponame: this.team.gitReponame,
+        teamName: this.teamName,
+        gitUsername: this.gitUsername,
+        gitReponame: this.gitReponame,
         // members: [{
         //   memberName: this.team.memberName,
         //   memberNumber: this.team.memberNumber,
         // }]
-        memberName: this.team.memberName,
-        memberNumber: this.team.memberNumber,
+        memberName: this.memberName,
+        memberNumber: this.memberNumber,
       }
       this.Service.save(this.newTeam).subscribe(result => this.gotoListteam());
       // this.router.navigate(['main']);
