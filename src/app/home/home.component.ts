@@ -14,13 +14,13 @@ export class HomeComponent implements OnInit {
   data: any;
   public teamName; 
   constructor(private Service: ServicesService, private route: ActivatedRoute) {
-    this.route.queryParams.subscribe(params => {
-      this.dash.l_commit = params["l_commit"];
-      this.dash.bNumber = params["bNumber"];
-      this.dash.bUrl = params["bUrl"];
-      this.dash.buildStatus = params["buildStatus"];
-      this.dash.jobtitle = params["jobtitle"];
-    });
+    // this.route.queryParams.subscribe(params => {
+    //   this.dash.l_commit = params["l_commit"];
+    //   this.dash.bNumber = params["bNumber"];
+    //   this.dash.bUrl = params["bUrl"];
+    //   this.dash.buildStatus = params["buildStatus"];
+    //   this.dash.jobtitle = params["jobtitle"];
+    // });
    }
 
    ngOnInit(): void {

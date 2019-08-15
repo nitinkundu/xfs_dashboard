@@ -31,19 +31,22 @@ export class ListteamComponent implements OnInit {
       }
 
   ngOnInit() {
-    this.Service.fetchAll().subscribe(data => {
-      console.log(data);
-      this.teams = data;
-    });
-
-    
+    // this.Service.fetchAll().subscribe(data => {
+    //   console.log(data);
+    //   this.teams = data;
+    //});
+   
   }
 
+  // goToHomeComponent(team) : void {
+  //   this.router.navigate(['list', team.teamName], {state: {data: {}}});
+  // }
 
 
-  public onSelect(team){
-    this.router.navigate(['list', team.teamName ])
-  }
+
+  // public onSelect(team){
+  //   this.router.navigate(['list', team.teamName ])
+  // }
 
   // public onSelect(team){
   //   let navigationExtras: NavigationExtras= {
@@ -60,10 +63,6 @@ export class ListteamComponent implements OnInit {
       
   // }
 
-  goToHomeComponent(): void {
-    this.Service.data = {this:this.team.teamName};
-    this.router.navigate(['list',this.team.teamName]);
-}
 }
   
 
