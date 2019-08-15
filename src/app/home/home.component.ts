@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Dashboard } from "../dashboard";
+import { ActivatedRoute,Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: "app-home",
@@ -8,6 +9,8 @@ import { Dashboard } from "../dashboard";
 })
 export class HomeComponent implements OnInit {
   dash: Dashboard;
+  
+  constructor(private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
     console.log(history.state.data);
