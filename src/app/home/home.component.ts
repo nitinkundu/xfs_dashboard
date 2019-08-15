@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
       //this.dash.bNumber = params["bNumber"];
       this.dash.bUrl = params["bUrl"];
       this.dash.buildStatus = params["buildStatus"];
-      this.dash.jobtitle = params["jobtitle"];
+      //this.dash.jobtitle = params["jobtitle"];
     });
    }
 
