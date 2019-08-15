@@ -32,15 +32,15 @@ export class ListteamComponent implements OnInit {
    
   }
 
-   public goToHomeComponent(team) : void {
-     this.router.navigate(['list', team.teamName], {state: {data: this.teams}});
-   }
+  //  public goToHomeComponent(team) : void {
+  //    this.router.navigate(['list', team.teamName], {state: {data: this.teams}});
+  //  }
 
 
 
-  // public onSelect(team){
-  //   this.router.navigate(['list', team.teamName ])
-  // }
+  public onSelect(team){
+    this.router.navigate(['list', team.teamName ])
+  }
 
   // public onSelect(team){
   //   let navigationExtras: NavigationExtras= {
