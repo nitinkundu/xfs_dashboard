@@ -43,7 +43,7 @@ export class ListteamComponent implements OnInit {
   public onSelect(team){
     let navigationExtras: NavigationExtras= {
         queryParams:{
-        l_commit: this.dash.l_commit,
+        // l_commit: this.dash.l_commit,
         bNumber: this.dash.bNumber,
         jobtitle: this.dash.jobtitle,
         buildStatus: this.dash.buildStatus,
