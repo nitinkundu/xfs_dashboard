@@ -29,6 +29,6 @@ import { AddteamComponent } from './addteam/addteam.component';
     FormsModule
   ],
   providers: [ServicesService],
-  bootstrap: [AppComponent, LoginComponent, HomeComponent, ListteamComponent, AddteamComponent,]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
