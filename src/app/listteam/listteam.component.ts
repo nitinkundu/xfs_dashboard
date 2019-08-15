@@ -18,23 +18,17 @@ export class ListteamComponent implements OnInit {
   public teamName;
   constructor(private router:Router, private route:ActivatedRoute, private Service: ServicesService) { }
 
-  // navigate(){
-  //   this.router.navigate(['home']);
-  //   // this.Service.findAll().subscribe(data => {
-  //   //   console.log(data);
-  //   //   this.team=data;
-
-  //   }
+  
     submit(){
       
       this.router.navigate(['add']);
       }
 
   ngOnInit() {
-    // this.Service.fetchAll().subscribe(data => {
-    //   console.log(data);
-    //   this.teams = data;
-    //});
+     this.Service.fetchAll().subscribe(data => {
+       console.log(data);
+      this.teams = data;
+    });
    
   }
 
