@@ -1,64 +1,109 @@
-<div class= "card1">
-
-    <h1 style="font-size: 150%" > 
-        <!-- <img src="https://banner2.kisspng.com/20180708/w/kisspng-wipro-logo-business-corporate-identity-5b420d04296d14.4683181615310553641697.jpg" alt="Wipro logo" style="width:60px;height:40px;"> -->
-    XFS | Digital Rig </h1>
-  
-    </div>
-    <div><h2 style="font-size:120%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial,"> <b>ADD TEAMS</b> </h2>
-<div class="card my-5">
+<div class="card1">
+  <h1 style="font-size: 150%">
+    <!-- <img src="https://banner2.kisspng.com/20180708/w/kisspng-wipro-logo-business-corporate-identity-5b420d04296d14.4683181615310553641697.jpg" alt="Wipro logo" style="width:60px;height:40px;"> -->
+    XFS | Digital Rig
+  </h1>
+</div>
+<div>
+  <h2
+    style="font-size:120%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial,"
+  >
+    <b>ADD TEAMS</b>
+  </h2>
+  <div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #teamsForm="ngForm">
         <div class="form-group">
           <label for="teamName">Team Name</label>
-         <input type="text" [(ngModel)]="teams.teamName" 
-            class="form-control" id="teamName" name="teamName" placeholder="Enter team name"
-            required #name="ngModel">
+          <input
+            type="text"
+            [(ngModel)]="teamName"
+            class="form-control"
+            id="teamName"
+            name="teamName"
+            placeholder="Enter team name"
+            required
+            #name="ngModel"
+          />
         </div>
         <!-- <div [hidden]="!teamName.pristine" class="alert alert-danger">Team Name is required</div> -->
         <div class="form-group">
           <label for="gitUsername">GitUsername</label>
-          <input type="text" [(ngModel)]="teams.gitUsername" 
-            class="form-control" id="gitUsername" name="gitUsername" placeholder="Enter gitUsername"
-            required #gitUsername="ngModel"></div>
-            <div class="form-group">
-            <label for="gitReponame">GitReponame</label>
-            <input type="text" [(ngModel)]="teams.gitReponame" 
-              class="form-control" id="gitUrl" name="gitReponame" placeholder="Enter gitReponame"
-              required #gitReponame="ngModel">
+          <input
+            type="text"
+            [(ngModel)]="gitUserName"
+            class="form-control"
+            id="gitUsername"
+            name="gitUserName"
+            placeholder="Enter gitUsername"
+            required
+            #gitUsername="ngModel"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="gitReponame">GitReponame</label>
+          <input
+            type="text"
+            [(ngModel)]="gitRepoName"
+            class="form-control"
+            id="gitUrl"
+            name="gitRepoName"
+            placeholder="Enter gitReponame"
+            required
+            #gitReponame="ngModel"
+          />
           <!-- <div [hidden]="!gitUrl.pristine" class="alert alert-danger">Git URL is required</div> -->
         </div>
 
         <mat-card class="example-card">
-            
-              <mat-card-content>
-                <form class="example-form">
-                  <table class="example-full-width" cellspacing="0">
-                    <tr>
-                      <td>
-                        <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Member Name" [(ngModel)]="memberName" name="memberName" required>
-                        </mat-form-field>
-                      </td>
-                    </tr>
-                    <tr>
-                    <td><mat-form-field class="example-full-width">
-                      <input matInput placeholder="Member Number" [(ngModel)]="memberNumber" name="memberNumber" required>
-                    </mat-form-field></td>
-                  </tr></table>
-                </form>
-                <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-              </mat-card-content>
-              <mat-card-actions>
-                <!-- <button mat-raised-button (click)="addUser()" color="primary">Add User</button> -->
-              </mat-card-actions>
-            </mat-card>
-        <button type="submit" (click)="onSubmit()" class="btn btn-info">Submit</button>
+          <mat-card-content>
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Member Name"
+                        [(ngModel)]="memberName"
+                        name="memberName"
+                        required
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Member Number"
+                        [(ngModel)]="memberNumber"
+                        name="memberNumber"
+                        required
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <mat-spinner
+              [style.display]="showSpinner ? 'block' : 'none'"
+            ></mat-spinner>
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- <button mat-raised-button (click)="addUser()" color="primary">Add User</button> -->
+          </mat-card-actions>
+        </mat-card>
+        <button type="submit" class="btn btn-info">
+          Submit
+        </button>
       </form>
     </div>
-    </div>
   </div>
+</div>
 
-  <div class="footer">
-    <p>Team KSR, Copyright @2019</p>
- </div>
+<div class="footer">
+  <p>Team KSR, Copyright @2019</p>
+</div>
