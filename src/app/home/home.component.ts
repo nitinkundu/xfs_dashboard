@@ -13,4 +13,7 @@ export class HomeComponent implements OnInit {
     console.log(history.state.data);
     this.dash = history.state.data;
   }
+  onSubmit() {
+    this.router.navigate(['list']);
+  }
 }
