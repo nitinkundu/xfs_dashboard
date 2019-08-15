@@ -44,7 +44,7 @@ export class ListteamComponent implements OnInit {
     let navigationExtras: NavigationExtras= {
         queryParams:{
         // l_commit: this.dash.l_commit,
-        bNumber: this.dash.bNumber,
+       // bNumber: this.dash.bNumber,
         jobtitle: this.dash.jobtitle,
         buildStatus: this.dash.buildStatus,
         bUrl: this.dash.bUrl,
