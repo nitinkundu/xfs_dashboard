@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
  
   constructor(private Service: ServicesService, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
-      // this.dash.l_commit = params["l_commit"];
-      //this.dash.bNumber = params["bNumber"];
+      this.dash.l_commit = params["l_commit"];
+      this.dash.bNumber = params["bNumber"];
       this.dash.bUrl = params["bUrl"];
       this.dash.buildStatus = params["buildStatus"];
-      //this.dash.jobtitle = params["jobtitle"];
+      this.dash.jobtitle = params["jobtitle"];
     });
    }
 
