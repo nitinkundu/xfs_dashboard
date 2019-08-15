@@ -9,7 +9,7 @@ export class ServicesService {
   private Url: string;
 
   constructor(private http: HttpClient) {
-    this.Url = "http://localhost:8090/api/";
+    this.Url = "http://ec2-52-66-245-186.ap-south-1.compute.amazonaws.com:8080/XFSAPP/api/";
   }
 
   public findAll(): Observable<Dashboard> {
