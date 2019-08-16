@@ -26,13 +26,24 @@
   </div>
 
 
+<<<<<<< HEAD
 
 <mat-card class="card1" (click)="onSelect(team)" *ngFor="let team of Team" >
+=======
+  <div>
+  <mat-card class="card1" (click)="onSelect(team)" *ngFor="let team of teams" >
+  <!-- <mat-card class="card1" (click)="goToHomeComponent(team)" *ngFor="let team of teams" > -->
+    <hr>
+>>>>>>> 9e7a395448361decd656780f095361564c272de8
     <mat-card-content>
          <mat-card-title>{{team.teamName}}</mat-card-title>
          <mat-card-subtitle> Hello Team {{team.teamName}}  </mat-card-subtitle>
     </mat-card-content>
+    <hr>
 </mat-card>
+    <br>
+</div>
+
 
 
   <div class= "space"></div>

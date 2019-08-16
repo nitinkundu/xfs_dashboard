@@ -1,32 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
-import { Team } from '../team';
-import { ServicesService } from '../services.service';
-
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Team } from "../team";
+import { ServicesService } from "../services.service";
+import { Dashboard } from "../dashboard";
 
 @Component({
-  selector: 'app-listteam',
-  templateUrl: './listteam.component.html',
-  styleUrls: ['./listteam.component.css']
+  selector: "app-listteam",
+  templateUrl: "./listteam.component.html",
+  styleUrls: ["./listteam.component.css"]
 })
 export class ListteamComponent implements OnInit {
+<<<<<<< HEAD
 
   team : Team;
   teams:any;
+=======
+  team: Team;
+  dash: Dashboard;
+  teams: any;
+  obj: any;
+>>>>>>> 9e7a395448361decd656780f095361564c272de8
   public teamName;
-  constructor(private router:Router, private route:ActivatedRoute, private Service: ServicesService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private Service: ServicesService
+  ) {}
 
-  // navigate(){
-  //   this.router.navigate(['home']);
-  //   // this.Service.findAll().subscribe(data => {
-  //   //   console.log(data);
-  //   //   this.team=data;
-
-  //   }
-    submit(){
-      
-      this.router.navigate(['add']);
-      }
+  submit() {
+    this.router.navigate(["add"]);
+  }
 
   ngOnInit() {
     this.Service.fetchAll().subscribe(data => {
@@ -34,12 +37,27 @@ export class ListteamComponent implements OnInit {
       this.teams = data;
     });
 
-    let tName = parseInt(this.route.snapshot.paramMap.get('teamName'));
+    let tName = parseInt(this.route.snapshot.paramMap.get("teamName"));
     this.teamName = tName;
   }
-
-  onSelect(team){
-    this.router.navigate(['list', team.teamName]);
+  // reduk3dvzzic5wusgt3i55msdnxnxmgm3kkzkqpwjzskib3chbuq
+  public onSelect(team) {
+    console.log(team);
+    this.router.navigate(["list", team.teamName], { state: { data: team } });
   }
 
+  // public onSelect(team){
+  //   let navigationExtras: NavigationExtras= {
+  //       queryParams:{
+  //       l_commit: this.dash.l_commit,
+  //       bNumber: this.dash.bNumber,
+  //       jobtitle: this.dash.jobtitle,
+  //       buildStatus: this.dash.buildStatus,
+  //       bUrl: this.dash.bUrl,
+  //       }
+  //     };
+
+  //     this.router.navigate(['list', team.teamName], navigationExtras);
+
+  // }
 }
