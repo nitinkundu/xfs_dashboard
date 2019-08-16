@@ -32,7 +32,7 @@ export class AddteamComponent implements OnInit {
       teamName: this.teamName,
       gitUserName: this.gitUserName,
       gitRepoName: this.gitRepoName,
-      members: [
+      member: [
         {
           memberName: this.memberName,
           memberNumber: this.memberNumber
