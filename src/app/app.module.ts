@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ListteamComponent } from './listteam/listteam.component';
 import { AddteamComponent } from './addteam/addteam.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { AddteamComponent } from './addteam/addteam.component';
     CustomMaterialModule,
     FormsModule
   ],
-  providers: [ServicesService],
+  providers: [ServicesService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
