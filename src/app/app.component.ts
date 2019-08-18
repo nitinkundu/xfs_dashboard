@@ -14,9 +14,6 @@ export class AppComponent implements OnInit {
   constructor(private dashboardService: ServicesService) { }
 
   ngOnInit() {
-    this.dashboardService.findAll().subscribe(data => {
-      console.log(data)
-      this.dash = data;
-    });
+    
   }
 }
