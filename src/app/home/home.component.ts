@@ -10,12 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  dash: Dashboard;
+  dash: any;
  
   constructor(private router: Router, private dashboardService: ServicesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.dashboardService.findAll().subscribe(data => {
+    this.dashboardService.fetchAll().subscribe(data => {
       console.log(data)
       this.dash = data;
     });

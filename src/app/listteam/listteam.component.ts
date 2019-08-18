@@ -10,16 +10,10 @@ import { Dashboard } from "../dashboard";
   styleUrls: ["./listteam.component.css"]
 })
 export class ListteamComponent implements OnInit {
-<<<<<<< HEAD
-
-  team : Team;
-  teams:any;
-=======
   team: Team;
   dash: Dashboard;
   teams: any;
   obj: any;
->>>>>>> 9e7a395448361decd656780f095361564c272de8
   public teamName;
   constructor(
     private router: Router,
@@ -46,18 +40,4 @@ export class ListteamComponent implements OnInit {
     this.router.navigate(["list", team.teamName], { state: { data: team } });
   }
 
-  // public onSelect(team){
-  //   let navigationExtras: NavigationExtras= {
-  //       queryParams:{
-  //       l_commit: this.dash.l_commit,
-  //       bNumber: this.dash.bNumber,
-  //       jobtitle: this.dash.jobtitle,
-  //       buildStatus: this.dash.buildStatus,
-  //       bUrl: this.dash.bUrl,
-  //       }
-  //     };
-
-  //     this.router.navigate(['list', team.teamName], navigationExtras);
-
-  // }
 }
