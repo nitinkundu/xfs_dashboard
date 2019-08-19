@@ -26,13 +26,13 @@
   </div>
 
 
-  <div>
+  <div fxLayout="row" fxLayoutAlign="start center">
   <mat-card class="card1" (click)="onSelect(team)" *ngFor="let team of teams" >
   <!-- <mat-card class="card1" (click)="goToHomeComponent(team)" *ngFor="let team of teams" > -->
     <hr>
     <mat-card-content>
-         <mat-card-title>{{team.teamName}}</mat-card-title>
-         <mat-card-subtitle> Hello Team {{team.teamName}}  </mat-card-subtitle>
+         <mat-card-title fxFlex="50%">{{team.teamName}}</mat-card-title>
+         <mat-card-subtitle fxFlex="50%"> Hello Team {{team.teamName}}  </mat-card-subtitle>
     </mat-card-content>
     <hr>
 </mat-card>
