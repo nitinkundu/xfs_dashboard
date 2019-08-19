@@ -43,16 +43,16 @@ pipeline
         //     steps{
         //         sh 'ls'
         //         withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pass', usernameVariable: 'usr')]) {
-        //          sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Frontend_Angular/abcApp.zip'
+        //          sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/XFS_Frontend_Angular/abcApp.zip'
         //         }
                 
         //     }
         // }
         stage ('Deploy') {
             steps {
-                withCredentials([file(credentialsId: 'ashish_deployment_server', variable: 'deployment_server')]) {
+                withCredentials([file(credentialsId: 'Ashish_Tomcat_ppk', variable: 'deployment_server')]) {
                    sh 'scp -v -i ${deployment_server} -o StrictHostKeyChecking=no abcApp.zip ubuntu@52.66.245.186:/home/ubuntu'
-                   //sh 'ssh -v -i ${deployment_server} -o StrictHostKeyChecking=no ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d xfs3;pm2 start "serve -p 4200 ." --name "XFS_Final""'
+                   sh 'ssh -v -i ${deployment_server} -o StrictHostKeyChecking=no ubuntu@52.66.245.186 "cd /home/ubuntu; unzip -o abcApp.zip -d xfs2;pm2 start "serve . -p 4200 " --name "XFS_Final""'
                    //sh 'ssh -v -i ${deployment_server} -o StrictHostKeyChecking=no ubuntu@52.66.245.186 "cd /home/ubuntu;sudo unzip -o abcApp.zip -d xfs2;pm2 restart "XFS_Final""'
                }
             }
