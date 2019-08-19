@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ListteamComponent } from './listteam/listteam.component';
 import { AddteamComponent } from './addteam/addteam.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RefreshComponent } from './refresh/refresh.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HomeComponent,
     ListteamComponent,
     AddteamComponent,
+    RefreshComponent,
   ],
   imports: [
     BrowserModule,
