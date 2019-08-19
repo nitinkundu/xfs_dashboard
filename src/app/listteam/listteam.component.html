@@ -20,7 +20,6 @@
               <li class="list-inline-item" style= "float: right"><a class="btn btn-info" (click)="submit()">Add Team</a></li>
             </ul>
           </div>
-        <!-- <router-outlet></router-outlet> -->
       </div>
     </div>
   </div>
@@ -28,7 +27,6 @@
 
   <div fxLayout="row" fxLayoutAlign="start center">
   <mat-card class="card1" (click)="onSelect(team)" *ngFor="let team of teams" >
-  <!-- <mat-card class="card1" (click)="goToHomeComponent(team)" *ngFor="let team of teams" > -->
     <hr>
     <mat-card-content>
          <mat-card-title fxFlex="50%">{{team.teamName}}</mat-card-title>
